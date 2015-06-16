@@ -1,0 +1,20 @@
+#N canvas 309 202 482 299 10;
+#X text 10 8 [uzi] - output a number of bangs;
+#X text 69 44 this is a clone of the [uzi] in Max.;
+#X obj 157 151 uzi;
+#X floatatom 225 111 5 0 0 0 - - -;
+#X text 212 91 Set # of bangs;
+#X obj 113 109 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 97 89 start;
+#X obj 178 233 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 208 193 print NUMBER;
+#X obj 96 200 print BANGS;
+#X text 194 232 Bang when done;
+#X text 448 6 pdx;
+#X connect 2 0 9 0;
+#X connect 2 1 7 0;
+#X connect 2 2 8 0;
+#X connect 3 0 2 1;
+#X connect 5 0 2 0;

@@ -1,0 +1,207 @@
+#N canvas 0 22 465 398 10;
+#X obj 10 24 inlet NAME_EXISTS?;
+#X obj 138 25 inlet ADD_NAME;
+#X obj 378 23 inlet CLEAR;
+#X obj 234 25 inlet ALL;
+#X obj 10 121 t b a b;
+#X obj 52 183 t b a;
+#X obj 127 252 symbol;
+#X msg 52 208;
+#X obj 52 252 symbol;
+#X msg 52 294 1;
+#X obj 10 311 f;
+#X msg 25 152 0;
+#X msg 378 191 set;
+#X obj 367 175 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 367 208;
+#X obj 52 274 select symbol;
+#X obj 155 138 spigot;
+#X msg 138 323 0;
+#X msg 149 323 1;
+#X obj 138 104 t b a a b;
+#X obj 207 121 == 0;
+#X obj 297 25 inlet DELETE;
+#X msg 180 266;
+#X obj 272 311 symbol;
+#X obj 180 311 symbol;
+#X obj 180 333 select symbol;
+#X msg 289 191 set;
+#X msg 289 208;
+#X obj 238 143 t b b a b;
+#X msg 345 249 set;
+#X obj 318 191 t b b;
+#X obj 10 65 route add exists all delete clear reset help methods;
+#X obj 378 102 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#N canvas 574 168 415 412 help 0;
+#X obj 15 20 inlet;
+#X obj 15 381 print HELP;
+#X obj 15 40 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 15 59 ----------------------- name_manager.pd -----------------------
+\, ------------------------------------------------------------------------
+\, --------------- Keeps track of names you've added or deleted ---------------
+\, ---- \, ---- Inlets: \, ---------- 0: [name_manager] method or Name
+Exists? Outputs 1 if true or 0 if false \, ---------- 1: Add Name.
+Input a name to add it to the internal of names \, ---------- 2: All.
+A outputs all names to outlet 1 \, ---------- 3: Delete. Input a name
+to deletes it from the internal \, ---------- 4: Clear. A clears the
+internal list. \, ---- \, ---- Outlets: \, ---------- 0: Name Exists?
+Outputs 1 or 0 when prompted by inlet 0 or the "exists" method \, ----------
+1: All. Outputs all names when prompted by inlet 2 or the "all" method
+\, ---- \, ---- Methods (sent to inlet 0): \, ---------- add: add a
+name to the \, ---------- exists: outputs 1 or 0 \, ---------- all:
+outputs all names to outlet 1 \, ---------- delete: delete a name from
+the \, ---------- clear: clears the \, ---------- reset: same as clear
+\, ---------- help: print help info to the console \, ---------- mehtods:
+print all available [name_manager] methods \, ------------------------------------------------------------------------
+\, ----------------------- name_manager.pd -----------------------
+\,;
+#X connect 0 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X restore 241 94 pd help;
+#N canvas 539 104 312 133 methods 0;
+#X msg 12 68 add exists all delete clear reset help methods;
+#X obj 12 48 b;
+#X obj 12 21 inlet;
+#X obj 12 98 print NAME_MANAGER_METHODS;
+#X connect 0 0 3 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X restore 298 97 pd methods;
+#X obj 367 364 outlet ALL;
+#N canvas 848 97 152 141 liter 0;
+#X obj -4 -432 list split 1;
+#X obj -3 -392 list;
+#X obj -4 -412 t b a;
+#X obj 23 -372 outlet ELEMENT;
+#X obj -4 -470 inlet LIST_TO_ITERATE;
+#X obj -4 -451 t a;
+#X connect 0 0 2 0;
+#X connect 0 1 1 1;
+#X connect 1 0 5 0;
+#X connect 2 0 1 0;
+#X connect 2 1 3 0;
+#X connect 4 0 5 0;
+#X connect 5 0 0 0;
+#X restore 52 230 pd liter;
+#N canvas 688 171 154 165 ggate 0;
+#X obj -249 -112 spigot;
+#X obj -301 -136 == 0;
+#X obj -267 -221 inlet;
+#X obj -334 -220 inlet;
+#X obj -249 -89 outlet;
+#X obj -334 -90 outlet;
+#X obj -334 -113 spigot;
+#X obj -267 -156 t f f;
+#X obj -334 -186 t a a;
+#X obj -240 -135 > 0;
+#X obj -247 -200 loadbang;
+#X msg -247 -180 0;
+#X connect 0 0 4 0;
+#X connect 1 0 6 1;
+#X connect 2 0 7 0;
+#X connect 3 0 8 0;
+#X connect 6 0 5 0;
+#X connect 7 0 1 0;
+#X connect 7 1 9 0;
+#X connect 8 0 6 0;
+#X connect 8 1 0 0;
+#X connect 9 0 0 1;
+#X connect 10 0 11 0;
+#X connect 11 0 7 0;
+#X restore 10 340 pd ggate;
+#N canvas 848 97 152 141 liter 0;
+#X obj -4 -432 list split 1;
+#X obj -3 -392 list;
+#X obj -4 -412 t b a;
+#X obj 23 -372 outlet ELEMENT;
+#X obj -4 -470 inlet LIST_TO_ITERATE;
+#X obj -4 -451 t a;
+#X connect 0 0 2 0;
+#X connect 0 1 1 1;
+#X connect 1 0 5 0;
+#X connect 2 0 1 0;
+#X connect 2 1 3 0;
+#X connect 4 0 5 0;
+#X connect 5 0 0 0;
+#X restore 180 289 pd liter;
+#X obj 229 229 list prepend set;
+#X obj 229 249 list trim;
+#X obj 219 191 list trim;
+#X obj 219 172 list prepend add2;
+#X obj 110 191 list trim;
+#X obj 110 172 list prepend add2;
+#X obj 10 371 outlet EXISTS;
+#X connect 0 0 31 0;
+#X connect 1 0 19 0;
+#X connect 2 0 32 0;
+#X connect 3 0 13 0;
+#X connect 4 0 10 0;
+#X connect 4 1 5 0;
+#X connect 4 2 11 0;
+#X connect 5 0 7 0;
+#X connect 5 1 6 0;
+#X connect 6 0 15 1;
+#X connect 7 0 36 0;
+#X connect 8 0 15 0;
+#X connect 9 0 10 1;
+#X connect 10 0 37 0;
+#X connect 11 0 10 1;
+#X connect 12 0 7 0;
+#X connect 12 0 14 0;
+#X connect 12 0 22 0;
+#X connect 12 0 27 0;
+#X connect 13 0 14 0;
+#X connect 14 0 35 0;
+#X connect 15 0 9 0;
+#X connect 16 0 44 0;
+#X connect 17 0 37 1;
+#X connect 18 0 37 1;
+#X connect 19 0 17 0;
+#X connect 19 1 16 0;
+#X connect 19 2 4 0;
+#X connect 19 3 18 0;
+#X connect 20 0 16 1;
+#X connect 21 0 28 0;
+#X connect 22 0 38 0;
+#X connect 23 0 25 1;
+#X connect 24 0 25 0;
+#X connect 25 1 42 0;
+#X connect 26 0 7 0;
+#X connect 26 0 14 0;
+#X connect 26 0 27 0;
+#X connect 27 0 39 0;
+#X connect 28 0 30 0;
+#X connect 28 1 22 0;
+#X connect 28 2 23 0;
+#X connect 28 3 26 0;
+#X connect 29 0 22 0;
+#X connect 30 0 27 0;
+#X connect 30 1 29 0;
+#X connect 31 0 19 0;
+#X connect 31 1 4 0;
+#X connect 31 2 13 0;
+#X connect 31 3 28 0;
+#X connect 31 4 32 0;
+#X connect 31 5 32 0;
+#X connect 31 6 33 0;
+#X connect 31 7 34 0;
+#X connect 31 8 4 0;
+#X connect 32 0 12 0;
+#X connect 36 0 8 0;
+#X connect 37 0 45 0;
+#X connect 37 1 20 0;
+#X connect 38 0 24 0;
+#X connect 39 0 40 0;
+#X connect 40 0 22 0;
+#X connect 41 0 7 0;
+#X connect 41 0 27 0;
+#X connect 41 0 14 0;
+#X connect 42 0 41 0;
+#X connect 43 0 7 0;
+#X connect 43 0 22 0;
+#X connect 43 0 14 0;
+#X connect 44 0 43 0;

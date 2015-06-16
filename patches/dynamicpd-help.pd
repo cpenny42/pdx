@@ -1,0 +1,73 @@
+#N canvas 524 148 1058 676 10;
+#X text 5 2 [dynamicpd] - simple interface for dynamic patching;
+#X text 1018 5 pdx;
+#X obj 192 505 dynamicpd;
+#X msg 38 226 obj foo r input;
+#X msg 62 253 obj bar print DynamicPd;
+#X msg 83 281 connect foo bar;
+#X msg 115 309 send input This is a message!;
+#X msg 18 203 init;
+#X msg 185 390 view;
+#X text 30 44 Create objects \, connect them \, send messages \, &
+more.;
+#X msg 383 242 init;
+#X msg 407 314 connect foo bar;
+#X msg 413 334 loadbang;
+#X msg 419 374 delete foo;
+#X msg 416 354 disconnect foo bar;
+#X msg 426 394 delete bar;
+#X msg 497 435 array test 515;
+#X msg 397 274 obj foo loadbang;
+#X msg 401 294 obj bar print;
+#X msg 511 388 connect foo baz;
+#X msg 535 311 msg baz fot wop;
+#X msg 550 330 floatatom num 10;
+#X text 414 240 <- always call separately;
+#N canvas 924 23 438 851 test_subpatch 0;
+#X restore 686 241 pd test_subpatch;
+#X msg 512 409 connect baz bar;
+#X msg 567 352 obj the_toggle tgl;
+#X msg 686 262 target test_subpatch \, clear \, obj methods r methods
+\, obj router route 0 1 2 3 4 \, msg message There will be coffee!
+\, obj printer print Hello World! \, connect methods router \, connect
+router 3 message \, connect message printer \, send methods 3;
+#X msg 626 410 text foo bar;
+#X msg 477 491 clear;
+#X text 100 90 Messages can be combined to make a script - each line
+must be separated by a comma.;
+#X text 98 124 See https://github.com/cpenny42/PdScript-Demo for an
+example that uses this in a basic iPad app.;
+#X text 121 164 More info TBD;
+#X text 509 187 Other Tests:;
+#X text 175 368 Click:;
+#X obj 18 176 loadbang;
+#X text 527 85 IMPORTANT!! "init" must always be called manually and
+must be called each time you want to use it.;
+#X text 710 214 Targeting subpatches:;
+#X obj 210 466 r \$0-dynamicpd;
+#X obj 380 527 s \$0-dynamicpd;
+#X obj 583 484 s \$0-dynamicpd;
+#X connect 3 0 2 0;
+#X connect 4 0 2 0;
+#X connect 5 0 2 0;
+#X connect 6 0 2 0;
+#X connect 7 0 2 0;
+#X connect 8 0 2 0;
+#X connect 10 0 38 0;
+#X connect 11 0 38 0;
+#X connect 12 0 38 0;
+#X connect 13 0 38 0;
+#X connect 14 0 38 0;
+#X connect 15 0 38 0;
+#X connect 16 0 39 0;
+#X connect 17 0 38 0;
+#X connect 18 0 38 0;
+#X connect 19 0 39 0;
+#X connect 20 0 39 0;
+#X connect 21 0 39 0;
+#X connect 24 0 39 0;
+#X connect 25 0 39 0;
+#X connect 27 0 39 0;
+#X connect 28 0 38 0;
+#X connect 34 0 7 0;
+#X connect 37 0 2 0;

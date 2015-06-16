@@ -1,0 +1,9 @@
+#N canvas 722 464 450 300 10;
+#X text 13 5 [cot] - cotangent;
+#X text 410 4 pdx;
+#X floatatom 171 96 5 0 0 0 - - -;
+#X obj 171 133 cot;
+#X floatatom 171 173 5 0 0 0 - - -;
+#X text 98 46 cotangent == cos(x)/sin(x);
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;

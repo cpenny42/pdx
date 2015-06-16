@@ -1,0 +1,15 @@
+#N canvas 528 359 433 261 10;
+#X text 2 6 [gswitch] - a switch;
+#X text 395 6 pdx;
+#X obj 174 160 gswitch;
+#X obj 220 127 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 174 186 5 0 0 0 - - -;
+#X floatatom 116 126 5 0 0 0 - - -;
+#X floatatom 166 127 5 0 0 0 - - -;
+#X text 46 45 It lets you switch between 2 things and has the same
+name as the corresponding Max/MSP object.;
+#X connect 2 0 4 0;
+#X connect 3 0 2 2;
+#X connect 5 0 2 0;
+#X connect 6 0 2 1;

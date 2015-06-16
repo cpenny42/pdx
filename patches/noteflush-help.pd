@@ -1,0 +1,27 @@
+#N canvas 566 331 573 423 10;
+#X text 6 4 [noteflush] - send a note off to every note;
+#X text 534 5 pdx;
+#X obj 280 163 noteflush;
+#X msg 84 97 60 127;
+#X msg 136 97 50 127;
+#X obj 331 112 bng 15 250 50 0 empty empty Bang_to_turn_of_all_notes
+17 7 0 10 -262144 -1 -1;
+#X obj 168 293 volume~;
+#X obj 279 262 hsl 128 15 0 1 0 0 empty empty Gain -2 -8 0 10 -262144
+-1 -1 7400 1;
+#X obj 179 323 dac~;
+#X obj 115 221 polyphonic_subtractive_synth;
+#X floatatom 280 84 5 0 0 0 Note_Thru - -;
+#X msg 280 111 \$1 80;
+#X connect 2 0 9 2;
+#X connect 3 0 9 0;
+#X connect 4 0 9 0;
+#X connect 5 0 2 1;
+#X connect 6 0 8 0;
+#X connect 6 1 8 1;
+#X connect 7 0 6 1;
+#X connect 7 0 6 3;
+#X connect 9 0 6 0;
+#X connect 9 1 6 4;
+#X connect 10 0 11 0;
+#X connect 11 0 2 0;

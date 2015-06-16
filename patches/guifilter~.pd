@@ -1,0 +1,101 @@
+#N canvas 392 133 781 347 10;
+#X obj -81 -83 inlet~;
+#X obj 1 83 autobiquad~;
+#X obj 100 100 biquad_response;
+#X obj -36 -83 inlet FILTER_CENTER;
+#X obj 84 -83 inlet FILTER_Q;
+#X obj 174 -83 inlet FILTER_GAIN;
+#X obj 282 -83 inlet FILTER_TYPE;
+#X obj 1 104 outlet~;
+#X obj 307 108 hsl 100 15 0 22050 0 0 \$0-to_center \$0-gui_center
+Center_Frequency 3 8 0 10 -262144 -1 -1 2900 1;
+#X obj 305 167 bng 15 250 50 0 \$0-lowpass empty lowpass 17 7 0 10
+-262144 -1 -1;
+#X obj 305 184 bng 15 250 50 0 \$0-highpass empty highpass 17 7 0 10
+-262144 -1 -1;
+#X obj 305 201 bng 15 250 50 0 \$0-bandpass empty bandpass 17 7 0 10
+-262144 -1 -1;
+#X obj 305 218 bng 15 250 50 0 \$0-notch empty notch 17 7 0 10 -262144
+-1 -1;
+#X obj 375 167 bng 15 250 50 0 \$0-peak empty peak 17 7 0 10 -262144
+-1 -1;
+#X obj 375 184 bng 15 250 50 0 \$0-lowshelf empty lowshelf 17 7 0 10
+-262144 -1 -1;
+#X obj 375 201 bng 15 250 50 0 \$0-highshelf empty highshelf 17 7 0
+10 -262144 -1 -1;
+#X floatatom 411 108 7 0 0 0 - #0-to_center #0-center;
+#X obj -36 -59 s \$0-gui_center;
+#X obj 13 -16 r \$0-center;
+#X obj 84 -58 s \$0-gui_q;
+#X obj 174 -59 s \$0-gui_gain;
+#X obj 282 -59 s \$0-gui_type;
+#X obj 375 218 tgl 15 0 \$0-kill \$0-gui_kill DSP_ON 17 7 0 10 -262144
+-1 -1 1 1;
+#X obj 26 3 r \$0-q;
+#X obj 38 22 r \$0-gain;
+#X obj 51 41 r \$0-type;
+#X obj 307 126 hsl 100 15 0.3 32 0 0 \$0-to_q \$0-gui_q Q 48 8 0 10
+-262144 -1 -1 300 1;
+#X floatatom 411 126 7 0 0 0 - #0-to_q #0-q;
+#X obj 307 144 hsl 100 15 -24 15 0 1 \$0-to_gain \$0-gui_gain Peak_Gain
+25 8 0 10 -262144 -1 -1 0 1;
+#X floatatom 411 144 7 0 0 0 - #0-to_gain #0-gain;
+#X obj 115 -12 r \$0-lowpass;
+#X obj 192 -12 r \$0-highpass;
+#X obj 275 -13 r \$0-bandpass;
+#X msg 115 11 lowpass;
+#X msg 192 11 highpass;
+#X msg 275 10 bandpass;
+#X obj 129 65 s \$0-type;
+#X msg 369 8 notch;
+#X msg 446 8 peak;
+#X msg 513 7 lowshelf;
+#X obj 369 -15 r \$0-notch;
+#X obj 446 -15 r \$0-peak;
+#X obj 513 -16 r \$0-lowshelf;
+#X obj 599 -15 r \$0-highshelf;
+#X msg 599 8 highshelf;
+#X obj 510 101 r \$0-kill;
+#X msg 510 187 \; pd dsp \$1 \;;
+#X obj 510 146 spigot;
+#X obj 578 102 t b b b;
+#X obj 577 74 loadbang;
+#X msg 528 124 0;
+#X msg 541 123 1;
+#X obj 584 147 s \$0-gui_kill;
+#X msg 584 125 1;
+#X connect 0 0 1 0;
+#X connect 1 0 7 0;
+#X connect 1 1 2 0;
+#X connect 3 0 17 0;
+#X connect 4 0 19 0;
+#X connect 5 0 20 0;
+#X connect 6 0 21 0;
+#X connect 18 0 1 1;
+#X connect 23 0 1 2;
+#X connect 24 0 1 3;
+#X connect 25 0 1 4;
+#X connect 30 0 33 0;
+#X connect 31 0 34 0;
+#X connect 32 0 35 0;
+#X connect 33 0 36 0;
+#X connect 34 0 36 0;
+#X connect 35 0 36 0;
+#X connect 37 0 36 0;
+#X connect 38 0 36 0;
+#X connect 39 0 36 0;
+#X connect 40 0 37 0;
+#X connect 41 0 38 0;
+#X connect 42 0 39 0;
+#X connect 43 0 44 0;
+#X connect 44 0 36 0;
+#X connect 45 0 47 0;
+#X connect 47 0 46 0;
+#X connect 48 0 51 0;
+#X connect 48 1 53 0;
+#X connect 48 2 50 0;
+#X connect 49 0 48 0;
+#X connect 50 0 47 1;
+#X connect 51 0 47 1;
+#X connect 53 0 52 0;
+#X coords 0 -1 1 1 360 142 2 100 100;

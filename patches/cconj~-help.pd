@@ -1,0 +1,11 @@
+#N canvas 364 452 450 300 10;
+#X text 4 1 complex signal arithmetic;
+#X text 405 0 pdx;
+#X obj 147 123 cadd~;
+#X obj 185 123 csub~;
+#X obj 223 123 cmult~;
+#X obj 147 147 cdiv~;
+#X obj 185 147 cexp~;
+#X obj 223 147 cconj~;
+#X text 45 59 complex arithmetic - Left is real \, right is imaginary
+;

@@ -1,0 +1,113 @@
+#N canvas 569 90 669 556 10;
+#X obj 2 520 cnv 15 660 20 empty \$0-pddp.cnv.footer empty 20 12 0
+14 -228856 -66577 0;
+#X obj 1 1 cnv 15 660 40 empty \$0-pddp.cnv.header ggate 3 12 0 18
+-204280 -1 0;
+#X obj 0 325 cnv 3 660 3 empty \$0-pddp.cnv.inlets inlets 15 12 0 13
+-228856 -1 0;
+#N canvas 52 467 217 209 META 0;
+#X text 11 23 LICENSE SIBSD;
+#X text 11 77 INLET_1 float;
+#X text 12 126 LIBRARY IntrinsicAudio;
+#X text 12 144 AUTHOR;
+#X text 13 161 RELEASE_DATE 2014;
+#X text 13 181 HELP_PATCH_AUTHORS;
+#X text 10 5 Created by;
+#X text 12 95 OUTLET_0 anything;
+#X text 12 108 OUTLET_1 anything;
+#X text 11 63 INLET_0 anything;
+#X text 11 43 DESCRIPTION ggate - 2-way gate;
+#X restore 613 522 pd META;
+#X obj 0 394 cnv 3 660 3 empty empty outlets 15 12 0 13 -228856 -1
+0;
+#X obj 0 466 cnv 3 660 3 empty empty arguments 15 12 0 13 -228856 -1
+0;
+#X obj 57 348 cnv 17 3 20 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X obj 57 368 cnv 17 3 20 empty empty 1 5 9 0 16 -228856 -162280 0
+;
+#X obj 57 419 cnv 17 3 20 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X obj 57 439 cnv 17 3 20 empty empty 1 5 9 0 16 -228856 -162280 0
+;
+#X text 100 521 See also:;
+#X text 6 23 2-way Gate \, named after equivalent MAX object;
+#X text 52 490 (none);
+#X obj 206 522 spigot;
+#X obj 51 79 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X floatatom 22 132 5 0 0 0 - - -;
+#X floatatom 57 132 5 0 0 0 - - -;
+#X floatatom 24 60 5 0 0 0 - - -;
+#X obj 164 522 gate2;
+#X text 87 418 ANYTHING - Outlet activated by 0 to left inlet;
+#X text 87 438 ANYTHING - Outlet activated by 1 or greater to left
+inlet;
+#X text 87 347 ANYTHING - Message to be sent to active outlet;
+#X obj 202 73 t f f;
+#X floatatom 202 53 5 0 0 0 - - -;
+#X obj 229 93 % 2;
+#X obj 229 113 == 0;
+#X floatatom 195 158 5 0 0 0 - - -;
+#X floatatom 231 157 5 0 0 0 - - -;
+#X text 68 76 <- toggle outlet;
+#X text 265 158 <- Even Numbers;
+#X text 102 157 Odd Numbers ->;
+#X text 259 112 <- 1 when input float is even;
+#X msg 481 64 testing the ggate object;
+#X floatatom 508 100 5 0 0 0 - - -;
+#X obj 445 152 print LEFT;
+#X obj 515 152 print RIGHT;
+#X obj 595 8 ggate;
+#X obj 24 102 ggate;
+#X obj 202 136 ggate;
+#X obj 481 124 ggate;
+#X text 18 215 The ggate object is a simple 2-way gate that mimics
+MAX's ggate. By default \, the left outlet is active. A 0 to the right
+inlet activates the left outlet \, a number > 0 activates the right
+outlet \, and a number < 0 closes both outlets.;
+#X obj 509 271 ggate;
+#X msg 525 247 0;
+#X msg 542 247 1;
+#X text 388 213 Use messages to ensure the correct outlet;
+#X text 412 226 is activated:;
+#X text 407 192 A bang will NOT toggle the gates.;
+#X obj 584 256 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 584 237 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 485 247 5 0 0 0 - - -;
+#X floatatom 492 295 5 0 0 0 - - -;
+#X floatatom 535 294 5 0 0 0 - - -;
+#X text 87 367 FLOAT - Set active outlet: 0 -> Left \, 1 or greater
+-> Right \,;
+#X text 453 367 less than 0 -> both outlets closed;
+#X msg 545 99 0;
+#X msg 573 99 100;
+#X msg 601 99 -5;
+#X text 525 10 pdx;
+#X connect 14 0 37 1;
+#X connect 17 0 37 0;
+#X connect 22 0 38 0;
+#X connect 22 1 24 0;
+#X connect 23 0 22 0;
+#X connect 24 0 25 0;
+#X connect 25 0 38 1;
+#X connect 32 0 39 0;
+#X connect 33 0 39 1;
+#X connect 37 0 15 0;
+#X connect 37 1 16 0;
+#X connect 38 0 26 0;
+#X connect 38 1 27 0;
+#X connect 39 0 34 0;
+#X connect 39 1 35 0;
+#X connect 41 0 50 0;
+#X connect 41 1 51 0;
+#X connect 42 0 41 1;
+#X connect 43 0 41 1;
+#X connect 47 0 41 1;
+#X connect 48 0 47 0;
+#X connect 49 0 41 0;
+#X connect 54 0 39 1;
+#X connect 55 0 39 1;
+#X connect 56 0 39 1;

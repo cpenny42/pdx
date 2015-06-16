@@ -1,0 +1,65 @@
+#N canvas 497 195 577 603 10;
+#X text 539 4 pdx;
+#X msg 14 297 reset;
+#X msg 119 417 delete 0;
+#X msg 179 417 delete 1;
+#X msg 96 317 init 0 mono phasor~;
+#X msg 40 321 view;
+#X obj 394 385 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 434 367 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X msg 391 429 0 \$1;
+#X obj 431 407 mtof;
+#X obj 391 408 mtof;
+#X msg 115 357 init 2.4 mono phasor~;
+#X msg 123 377 init 3.7 stereo adc~;
+#X msg 86 297 init 0 mono osc~ 220;
+#X msg 243 417 delete 2.4;
+#X msg 431 429 2.4 \$1;
+#X msg 314 417 delete 3.7;
+#X msg 105 337 init 1 stereo adc~;
+#X obj 90 470 channels~;
+#X obj 91 499 *~ 0.5;
+#X obj 136 500 *~ 0.5;
+#X obj 387 4 pddp/dsp;
+#X text 76 115 Create a channel with "init" \, delete it with "delete"
+\, reset to the initial configuration with "reset" \, and view the
+subpatch containing each channel with "view".;
+#X text 77 171 Channels can be any number \, including negatives &
+decimals. To send a message to a channel \, prepend the message with
+the channel #.;
+#X obj 81 530 lop~ 300;
+#X obj 141 530 lop~ 300;
+#X obj 98 566 dac~;
+#X text 8 0 [channels~] - dynamically manage patches as audio channels
+;
+#X text 73 42 [channels] lets you manage multiple mono or stereo patches
+as independent audio channels. This can be more efficient than opening
+separate patches with [throw~] & [catch~] objects.;
+#X text 79 226 Creating/deleting channels could cause clicks - prevent
+this by making your patch silent until it receives a message.;
+#X text 221 336 <- could cause feedback on laptop speakers;
+#X connect 1 0 18 0;
+#X connect 2 0 18 0;
+#X connect 3 0 18 0;
+#X connect 4 0 18 0;
+#X connect 5 0 18 0;
+#X connect 6 0 10 0;
+#X connect 7 0 9 0;
+#X connect 8 0 18 0;
+#X connect 9 0 15 0;
+#X connect 10 0 8 0;
+#X connect 11 0 18 0;
+#X connect 12 0 18 0;
+#X connect 13 0 18 0;
+#X connect 14 0 18 0;
+#X connect 15 0 18 0;
+#X connect 16 0 18 0;
+#X connect 17 0 18 0;
+#X connect 18 0 19 0;
+#X connect 18 1 20 0;
+#X connect 19 0 24 0;
+#X connect 20 0 25 0;
+#X connect 24 0 26 0;
+#X connect 25 0 26 1;

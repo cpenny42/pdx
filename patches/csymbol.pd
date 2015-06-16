@@ -1,0 +1,15 @@
+#N canvas 622 405 186 261 10;
+#X obj 12 9 inlet;
+#X obj 12 71 unpack 0 0;
+#X obj 35 142 list;
+#X obj 12 118 list append +;
+#X obj 35 184 outlet;
+#X obj 69 97 makefilename %si;
+#X obj 35 161 lsymbol;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 1 1 5 0;
+#X connect 2 0 6 0;
+#X connect 3 0 2 0;
+#X connect 5 0 2 1;
+#X connect 6 0 4 0;

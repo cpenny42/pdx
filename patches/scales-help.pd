@@ -1,0 +1,76 @@
+#N canvas 210 66 462 640 10;
+#X obj 205 521 list prepend set;
+#X obj 172 461 scales;
+#X obj 205 541 list trim;
+#X obj 172 481 list prepend set;
+#X obj 172 501 list trim;
+#X text 5 -9 [scales] - generate musical scales;
+#X text 414 -5 pdx;
+#X text 42 41 This will generate any scale you want. You can change
+the root note \, mode \, octave \, and intervals on the fly.;
+#X text 43 78 Provide it a list of intervals and it will output the
+MIDI numbers for each note in the scale. The number of intervals determines
+the number of notes in the scale.;
+#X text 42 130 You can cycle up & down for the root \, mode \, and
+octave \, and you can move up and down the scale positions.;
+#X text 42 172 The left outlet outputs the midi notes \, and the right
+outlet outputs the note symbols (such as C#4 or B2).;
+#X text 42 213 All methods besides "help" and "methods" will trigger
+output;
+#X text 402 213 .;
+#X msg 42 283 set 2 2 1 2 2 2 1;
+#X floatatom 375 263 5 0 0 0 - - -;
+#X msg 290 263 octave up;
+#X msg 298 282 octave down;
+#X msg 375 282 octave \$1;
+#X floatatom 133 341 5 0 0 0 - - -;
+#X msg 62 340 root up;
+#X msg 68 360 root down;
+#X msg 133 360 root \$1;
+#X msg 204 360 up;
+#X msg 233 360 down;
+#X msg 268 360 reset;
+#X msg 308 360 methods;
+#X msg 360 360 help;
+#X text 48 265 Major scale:;
+#X obj 172 439 r \$0-scales_methods;
+#X obj 42 313 s \$0-scales_methods;
+#X obj 163 313 s \$0-scales_methods;
+#X msg 163 263 mode up;
+#X msg 170 283 mode down;
+#X floatatom 235 264 5 0 0 0 - - -;
+#X msg 235 283 mode \$1;
+#X obj 290 312 s \$0-scales_methods;
+#X obj 62 390 s \$0-scales_methods;
+#X obj 204 390 s \$0-scales_methods;
+#X obj 288 478 print NOTES;
+#X obj 88 478 print SCALE;
+#X msg 205 571 C5 D5 E5 F5 G5 A5 A#5 C6;
+#X msg 172 591 60 62 64 65 67 69 70 72;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X connect 1 0 39 0;
+#X connect 1 1 0 0;
+#X connect 1 1 38 0;
+#X connect 2 0 40 0;
+#X connect 3 0 4 0;
+#X connect 4 0 41 0;
+#X connect 13 0 29 0;
+#X connect 14 0 17 0;
+#X connect 15 0 35 0;
+#X connect 16 0 35 0;
+#X connect 17 0 35 0;
+#X connect 18 0 21 0;
+#X connect 19 0 36 0;
+#X connect 20 0 36 0;
+#X connect 21 0 36 0;
+#X connect 22 0 37 0;
+#X connect 23 0 37 0;
+#X connect 24 0 37 0;
+#X connect 25 0 37 0;
+#X connect 26 0 37 0;
+#X connect 28 0 1 0;
+#X connect 31 0 30 0;
+#X connect 32 0 30 0;
+#X connect 33 0 34 0;
+#X connect 34 0 30 0;

@@ -1,0 +1,23 @@
+#N canvas 614 378 468 291 10;
+#X text 5 0 [anything];
+#X obj 126 228 anything;
+#X floatatom 196 137 5 0 0 0 - - -;
+#X symbolatom 230 137 10 0 0 0 - - -;
+#X msg 236 158 one two three four five six seven;
+#X obj 96 135 bng 15 250 50 0 empty empty Output 17 7 0 10 -262144
+-1 -1;
+#X text 213 116 Store a value:;
+#X obj 126 250 print from_anything;
+#X text 24 37 [anything] stores any float \, symbol \, or list \, like
+[float] \, [symbol] \, and [list].;
+#X msg 56 184 foo bar;
+#X text 50 167 Store & output;
+#X text 27 74 Left inlet stores & outputs value \, right inlet only
+stores it. Bang to the left inlet outputs the value;
+#X text 428 5 pdx;
+#X connect 1 0 7 0;
+#X connect 2 0 1 1;
+#X connect 3 0 1 1;
+#X connect 4 0 1 1;
+#X connect 5 0 1 0;
+#X connect 9 0 1 0;

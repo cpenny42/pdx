@@ -1,0 +1,15 @@
+#N canvas 92 121 430 283 10;
+#X text 392 2 pdx;
+#X floatatom 166 108 5 0 0 1 Input - -;
+#X floatatom 170 244 5 0 0 0 Output - -;
+#X msg 113 150 1.4;
+#X msg 195 155 1.6;
+#X text 106 46 Rounds to the next int.;
+#X obj 171 185 ceil;
+#X text 15 -4 [ceil];
+#X obj 225 243 print NEXT_INT;
+#X connect 1 0 6 0;
+#X connect 3 0 6 0;
+#X connect 4 0 6 0;
+#X connect 6 0 2 0;
+#X connect 6 0 8 0;

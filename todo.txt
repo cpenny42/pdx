@@ -1,0 +1,15 @@
+TODO:
+
+figure out error messages with pitchshifter~.pd
+same with ringmod~ and ringmod~~
+maybe not anymore
+
+I think I messed up hann_table-help.pd
+
+update sigbiquad_coeff-help.pd (still is a copy of mmb's help file). Same with sigbiquad~-help
+
+fix transistor~-help.pd
+
+something happened to autospectrum
+
+mention that [gate 3] is different than [gate3] and will produce an error in xcode

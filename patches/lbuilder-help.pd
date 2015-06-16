@@ -1,0 +1,25 @@
+#N canvas 531 413 428 328 10;
+#X text 4 2 [lbuilder] - programatically build a list;
+#X text 367 4 pdx;
+#X obj 166 250 lbuilder;
+#X text 28 50 [lbuilder] builds a list by letting you add elements
+one-by-one. Add an element in the left inlet \, send a bang to the
+middle inlet to output it. Send a bang to the right inlet to clear
+the list.;
+#X msg 77 144 one two;
+#X msg 108 167 three;
+#X msg 138 190 four five;
+#X floatatom 163 211 5 0 0 0 - - -;
+#X obj 234 169 bng 15 250 50 0 empty empty Bang_to_output 17 7 0 10
+-262144 -1 -1;
+#X obj 234 218 bng 15 250 50 0 empty empty Bang_to_Reset 17 7 0 10
+-262144 -1 -1;
+#X text 63 122 Add:;
+#X obj 166 281 print LBUILDER-HELP;
+#X connect 2 0 11 0;
+#X connect 4 0 2 0;
+#X connect 5 0 2 0;
+#X connect 6 0 2 0;
+#X connect 7 0 2 0;
+#X connect 8 0 2 1;
+#X connect 9 0 2 2;

@@ -1,0 +1,28 @@
+#N canvas 588 361 450 300 10;
+#X text 392 2 pdx;
+#X floatatom 166 108 5 0 0 1 Input - -;
+#X floatatom 170 244 5 0 0 0 Output - -;
+#N canvas 802 551 361 228 META 0;
+#X text 8 29 LICENSE SIBSD;
+#X text 8 9 KEYWORDS number minimum maximum int;
+#X text 6 69 INLET_0 float;
+#X text 7 91 OUTLET_0 float;
+#X text 7 110 LIBRARY pdx;
+#X text 7 130 AUTHOR;
+#X text 7 190 HELP_PATCH_AUTHORS . Patch updated for the pdx framework.
+;
+#X text 8 49 DESCRIPTION round int;
+#X text 7 150 WEBSITE http://www.intrinsic-audio.com;
+#X text 7 170 RELEASE_DATE 2014;
+#X restore 378 258 pd META;
+#X text 15 -4 [round];
+#X obj 171 185 round;
+#X msg 113 150 1.4;
+#X msg 195 155 1.6;
+#X obj 225 243 print NEAREST_INT;
+#X text 106 46 Rounds to the nearest int.;
+#X connect 1 0 5 0;
+#X connect 5 0 2 0;
+#X connect 5 0 8 0;
+#X connect 6 0 5 0;
+#X connect 7 0 5 0;

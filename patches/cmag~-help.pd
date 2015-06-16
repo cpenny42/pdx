@@ -1,0 +1,18 @@
+#N canvas 0 22 450 300 10;
+#X text 404 3 pdx;
+#X obj 141 262 csub~;
+#X obj 179 262 cmult~;
+#X obj 263 262 cexp~;
+#X obj 301 262 cconj~;
+#X text 45 59 complex arithmetic - Left is real \, right is imaginary
+;
+#X obj 144 101 number~;
+#X obj 221 101 number~;
+#X text 180 231 See also:;
+#X obj 184 177 view~;
+#X obj 225 262 cadd~;
+#X text 4 0 [cmag~] - Complex signal magnitude;
+#X obj 184 148 cmag~;
+#X connect 6 0 12 0;
+#X connect 7 0 12 1;
+#X connect 12 0 9 0;

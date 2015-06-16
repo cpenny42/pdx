@@ -1,0 +1,8 @@
+#N canvas 564 429 352 182 10;
+#X text 5 5 [lreverse] - reverse a list;
+#X text 305 3 pdx;
+#X msg 104 60 one two three four five;
+#X obj 104 95 lreverse;
+#X obj 104 122 print LREVERSE-HELP;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;

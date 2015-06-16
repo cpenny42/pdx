@@ -1,0 +1,14 @@
+#N canvas 429 221 115 210 10;
+#X obj 15 108 counter2;
+#X obj 5 15 inlet;
+#X obj 24 64 liter;
+#X obj 5 37 t b a b;
+#X obj 5 145 f;
+#X obj 5 168 outlet;
+#X connect 0 0 4 1;
+#X connect 1 0 3 0;
+#X connect 2 0 0 2;
+#X connect 3 0 4 0;
+#X connect 3 1 2 0;
+#X connect 3 2 0 1;
+#X connect 4 0 5 0;

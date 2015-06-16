@@ -1,0 +1,16 @@
+#N canvas 595 467 330 224 10;
+#X text 7 5 [ladd2] - add lists to message boxes;
+#X text 279 3 pdx;
+#X obj 78 120 ladd2;
+#X msg 78 158;
+#X msg 128 131 set;
+#X msg 13 81 one;
+#X msg 70 81 two;
+#X msg 128 77 three four five;
+#X floatatom 139 97 5 0 0 0 - - -;
+#X connect 2 0 3 0;
+#X connect 4 0 3 0;
+#X connect 5 0 2 0;
+#X connect 6 0 2 0;
+#X connect 7 0 2 0;
+#X connect 8 0 2 0;

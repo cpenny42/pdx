@@ -1,0 +1,27 @@
+#N canvas 524 177 252 134 10;
+#X text 6 5 Dynamic Receive;
+#X obj 11 106 outlet FROM_RECEIVER;
+#N canvas 985 38 450 300 \$0-guts 0;
+#X restore 23 66 pd \$0-guts;
+#X obj 11 85 r \$0-from_receiver;
+#N canvas 710 256 398 135 set_receiver 0;
+#X obj 18 -3 inlet;
+#X obj 18 110 s pd-\$0-guts;
+#X obj 18 59 list;
+#X obj 39 37 loadfloat \$0;
+#X obj 18 17 symbol;
+#X msg 18 78 clear \, obj 0 0 r \$1 \, obj 0 20 s \$2-from_receiver
+\, connect 0 0 1 0 \, vis 0 \,;
+#X connect 0 0 4 0;
+#X connect 2 0 5 0;
+#X connect 3 0 2 1;
+#X connect 4 0 2 0;
+#X connect 5 0 1 0;
+#X restore 11 47 pd set_receiver;
+#X obj 119 7 loadbang;
+#X obj 11 27 inlet RECEIVER;
+#X obj 119 29 symbol \$1;
+#X connect 3 0 1 0;
+#X connect 5 0 7 0;
+#X connect 6 0 4 0;
+#X connect 7 0 4 0;

@@ -1,0 +1,126 @@
+#N canvas 412 50 575 923 10;
+#X obj 0 897 cnv 15 552 21 empty empty empty 20 12 0 14 -233017 -33289
+0;
+#X obj 0 511 cnv 3 550 3 empty empty inlets 8 12 0 13 -228856 -1 0
+;
+#X obj 0 850 cnv 3 550 3 empty empty outlets 8 12 0 13 -228856 -1 0
+;
+#X obj 77 520 cnv 17 3 99 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X obj 77 634 cnv 17 3 33 empty empty 1 5 9 0 16 -228856 -162280 0
+;
+#X obj 0 0 cnv 15 552 40 empty empty counter 3 12 0 18 -204280 -1 0
+;
+#X obj 77 707 cnv 17 3 33 empty empty 2 5 9 0 16 -228856 -162280 0
+;
+#X obj 77 755 cnv 17 3 33 empty empty 3 5 9 0 16 -228856 -162280 0
+;
+#X obj 77 801 cnv 17 3 33 empty empty 4 5 9 0 16 -228856 -162280 0
+;
+#X text 97 519 bang;
+#X text 177 519 - main bang input \, where counter is collected;
+#X text 97 632 bang;
+#X text 99 706 bang;
+#X text 99 752 bang;
+#X text 98 798 bang;
+#X text 177 628 - change counter direction;
+#X text 96 650 float;
+#X text 204 662 0 = up;
+#X text 204 674 1 = down;
+#X text 177 650 - counter direction;
+#X text 98 724 float;
+#X text 98 773 float;
+#X text 98 819 float;
+#X text 98 537 message;
+#X obj 77 866 cnv 17 3 17 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X text 177 864 - current value of counter;
+#X text 98 866 float;
+#X obj 484 4 counter;
+#X floatatom 97 463 5 0 0 0 - - -;
+#X text 133 462 value;
+#X obj 97 83 metro 300;
+#X msg 165 56 up;
+#X msg 165 82 down;
+#X msg 239 158 dec;
+#X msg 238 134 inc;
+#X text 259 79 count direction;
+#X text 280 143 instant counter value change;
+#X obj 97 59 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+;
+#X obj 245 233 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 218 57 0;
+#X msg 218 82 1;
+#X floatatom 265 191 5 0 0 0 - - -;
+#X floatatom 266 212 5 0 0 0 - - -;
+#X floatatom 266 233 5 0 0 0 - - -;
+#X text 96 605 float;
+#X text 177 605 - same as bang;
+#X obj 256 58 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 177 797 - reset to maximum value \, wait for next bang before
+output;
+#X text 177 819 - set maximum value;
+#X text 49 22 count over a range of integers;
+#X obj 244 213 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 243 192 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#N canvas 669 617 432 238 additional 0;
+#X msg 188 97 set \$1;
+#X floatatom 188 78 5 0 0 0 - - -;
+#X msg 242 97 jam \$1;
+#X floatatom 242 78 5 0 0 0 - - -;
+#X text 133 61 set counter to nr. and output;
+#X text 282 76 immediately;
+#X text 98 78 at next bang;
+#X msg 103 97 goto \$1;
+#X text 164 99 =;
+#X msg 82 159 min \$1;
+#X msg 130 159 max \$1;
+#X floatatom 82 138 5 0 0 0 - - -;
+#X floatatom 130 138 5 0 0 0 - - -;
+#X text 79 121 set min/max;
+#X text 99 45 additional ways to accomplish the same:;
+#X obj 2 2 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
+#X text 4 2 Additional counter messages;
+#X obj 242 184 counter;
+#X connect 0 0 17 0;
+#X connect 1 0 0 0;
+#X connect 2 0 17 0;
+#X connect 3 0 2 0;
+#X connect 7 0 17 0;
+#X connect 9 0 17 0;
+#X connect 10 0 17 0;
+#X connect 11 0 9 0;
+#X connect 12 0 10 0;
+#X restore 377 395 pd additional ways;
+#X text 302 191 set minimum value \, bang to reset counter;
+#X text 177 723 - set minimum value;
+#X text 177 705 - reset to minimum value;
+#X text 177 749 - reset to minimum value;
+#X text 177 769 - set minimum value and reset counter immediately;
+#X text 303 211 set minimum value and reset counter;
+#X text 303 231 set maximum value \, bang to set counter;
+#X obj 97 292 counter;
+#X text 177 538 - "up" \, down" \, change direction. "inc" and "dec"
+increment or decrement counter \, "set n" \, "goto n" \, "jam n" control
+the counter value.;
+#X text 133 342 the counter in pdx only has the left-most outlet;
+#X connect 30 0 60 0;
+#X connect 31 0 60 0;
+#X connect 32 0 60 0;
+#X connect 33 0 60 0;
+#X connect 34 0 60 0;
+#X connect 37 0 30 0;
+#X connect 38 0 60 4;
+#X connect 39 0 60 1;
+#X connect 40 0 60 1;
+#X connect 41 0 60 2;
+#X connect 42 0 60 3;
+#X connect 43 0 60 4;
+#X connect 46 0 60 1;
+#X connect 50 0 60 3;
+#X connect 51 0 60 2;
+#X connect 60 0 28 0;

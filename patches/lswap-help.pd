@@ -1,0 +1,11 @@
+#N canvas 574 552 406 197 10;
+#X text 5 3 [lswap] - like [swap] \, but for symbols;
+#X text 370 1 pdx;
+#X obj 119 109 lswap;
+#X text 61 46 This swaps two symbols given as a list.;
+#X msg 119 82 1 2;
+#X obj 119 136 print LSWAP-HELP;
+#X msg 155 82 foo bar;
+#X connect 2 0 5 0;
+#X connect 4 0 2 0;
+#X connect 6 0 2 0;

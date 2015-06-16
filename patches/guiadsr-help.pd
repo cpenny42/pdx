@@ -1,0 +1,16 @@
+#N canvas 314 386 408 258 10;
+#X text 9 4 [guiadsr] - sliders for [adsr~];
+#X text 365 0 pdx;
+#X obj 120 163 adsr~;
+#X obj 147 72 guiadsr;
+#X msg 73 120 127;
+#X msg 99 119 0;
+#X obj 120 189 view~;
+#X obj 193 185 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 73 39 Automatically scales duration exponentially;
+#X connect 2 0 6 0;
+#X connect 2 1 7 0;
+#X connect 3 0 2 1;
+#X connect 4 0 2 0;
+#X connect 5 0 2 0;

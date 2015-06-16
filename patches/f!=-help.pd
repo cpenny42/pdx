@@ -1,0 +1,15 @@
+#N canvas 439 446 450 300 10;
+#X text 410 5 pdx;
+#X floatatom 156 87 5 0 0 0 - - -;
+#X obj 157 120 f!= 4;
+#X msg 93 94 4;
+#X msg 124 94 5;
+#X obj 130 158 print;
+#X floatatom 191 147 5 0 0 0 - - -;
+#X text 93 44 only lets through floats != the argument;
+#X text 10 9 [f!=] - filter float != argument;
+#X connect 1 0 2 0;
+#X connect 2 0 6 0;
+#X connect 2 0 5 0;
+#X connect 3 0 2 0;
+#X connect 4 0 2 0;

@@ -1,0 +1,41 @@
+#N canvas 525 183 637 470 10;
+#X text -208 3 [iterator] - like [counter] \, but different;
+#X text 389 2 pdx;
+#X obj 81 400 iterator;
+#X text -170 44 Iterator is a counter.;
+#X obj 15 218 bng 15 250 50 0 empty empty Bang_to_decrease 17 7 0 10
+-262144 -1 -1;
+#X obj 248 270 bng 15 250 50 0 empty empty Bang_to_increase 17 7 0
+10 -262144 -1 -1;
+#X obj 88 242 bng 15 250 50 0 empty empty Bang_to_Reset 17 7 0 10 -262144
+-1 -1;
+#X floatatom -27 298 5 0 0 0 Set_reset_value - -;
+#X floatatom 239 306 5 0 0 1 Set_minimum - -;
+#X floatatom 239 330 5 0 0 1 Set_Maximum - -;
+#X msg 122 283 symbol none;
+#X msg 131 307 symbol none;
+#X floatatom 81 431 5 0 0 0 - - -;
+#X floatatom 4 373 5 0 0 0 Set_to_1_less_than_this_number - -;
+#X floatatom 179 373 5 0 0 1 Set_to_1_more_than_this_number - -;
+#X text 104 263 Remove min/max:;
+#X text -170 67 Left inlet: Bang to decrease by 1 \, or float to output
+1 less than the provided float.;
+#X text -168 100 Inlet 1: Bang to reset;
+#X text -168 120 Inlet 2: Set reset value;
+#X text -167 141 Inlet 3: Set Minimum value ("symbol none" will remove
+it);
+#X text -167 161 Inlet 4: Set Maximum value ("symbol none" will remove
+it);
+#X text -166 177 Right inlet: Bang to increase by 1 \, or float to
+output 1 more than the provided float.;
+#X connect 2 0 12 0;
+#X connect 4 0 2 0;
+#X connect 5 0 2 5;
+#X connect 6 0 2 1;
+#X connect 7 0 2 2;
+#X connect 8 0 2 3;
+#X connect 9 0 2 4;
+#X connect 10 0 2 3;
+#X connect 11 0 2 4;
+#X connect 13 0 2 0;
+#X connect 14 0 2 5;

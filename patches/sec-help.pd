@@ -1,0 +1,9 @@
+#N canvas 609 388 352 234 10;
+#X text 293 14 pdx;
+#X floatatom 161 106 5 0 0 0 - - -;
+#X floatatom 161 183 5 0 0 0 - - -;
+#X text 3 15 [sec] - secant;
+#X text 118 56 secant == 1/cos(x);
+#X obj 161 143 sec;
+#X connect 1 0 5 0;
+#X connect 5 0 2 0;

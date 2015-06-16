@@ -1,0 +1,35 @@
+#N canvas 730 90 450 300 10;
+#X obj 58 266 dac~;
+#X obj 40 224 *~ 0.1;
+#X obj 90 224 *~ 0.1;
+#X obj 91 152 pitchshifter~;
+#X msg 199 109 transpose \$1;
+#X floatatom 199 90 5 0 0 0 - - -;
+#X floatatom 307 105 5 0 0 0 - - -;
+#X msg 307 125 window \$1;
+#X floatatom 297 167 5 0 0 0 - - -;
+#X msg 297 186 delay \$1;
+#X obj 127 198 / 100;
+#X floatatom 129 179 5 0 0 0 - - -;
+#X obj 51 114 lop~ 200;
+#X obj 40 83 phasor~ 200;
+#X text 6 1 [pitchshifter~] - shift the pitch of an incoming signal
+;
+#X text 119 271 Thanks to ClaudiusMaximus via forum.pdpatchrepo.info
+;
+#X text 410 5 pdx;
+#X connect 1 0 0 0;
+#X connect 2 0 0 1;
+#X connect 3 0 2 0;
+#X connect 3 0 1 0;
+#X connect 4 0 3 1;
+#X connect 5 0 4 0;
+#X connect 6 0 7 0;
+#X connect 7 0 3 1;
+#X connect 8 0 9 0;
+#X connect 9 0 3 1;
+#X connect 10 0 2 1;
+#X connect 10 0 1 1;
+#X connect 11 0 10 0;
+#X connect 12 0 3 0;
+#X connect 13 0 12 0;

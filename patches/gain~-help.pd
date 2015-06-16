@@ -1,0 +1,9 @@
+#N canvas 394 333 398 254 10;
+#X text 9 3 [gain~] - simple gain audio effect;
+#X text 362 2 pdx;
+#X obj 128 103 gain~;
+#X obj 128 72 osc~ 0.1;
+#X obj 128 208 view~;
+#X obj 251 14 pddp/dsp;
+#X connect 2 0 4 0;
+#X connect 3 0 2 0;

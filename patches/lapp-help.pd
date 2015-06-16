@@ -1,0 +1,12 @@
+#N canvas 595 467 399 219 10;
+#X text 354 3 pdx;
+#X text 7 5 [lapp] - append something to each item in a list;
+#X msg 94 83 one two three four five;
+#X obj 137 118 lapp .;
+#X obj 180 150 print LAPP-HELP;
+#X obj 137 150 lset;
+#X msg 137 177;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 0 5 0;
+#X connect 5 0 6 0;

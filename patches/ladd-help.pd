@@ -1,0 +1,17 @@
+#N canvas 0 22 429 240 10;
+#X text 390 8 pdx;
+#X msg 156 166;
+#X msg 206 139 set;
+#X msg 91 89 one;
+#X msg 148 89 two;
+#X msg 206 85 three four five;
+#X floatatom 217 105 5 0 0 0 - - -;
+#X obj 156 128 ladd;
+#X text 3 7 [ladd] - add semicolon terminated lists to message boxes
+;
+#X connect 2 0 1 0;
+#X connect 3 0 7 0;
+#X connect 4 0 7 0;
+#X connect 5 0 7 0;
+#X connect 6 0 7 0;
+#X connect 7 0 1 0;

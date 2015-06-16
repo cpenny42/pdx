@@ -1,0 +1,68 @@
+#N canvas 390 497 769 383 10;
+#X text 6 1 [name_manager] - keep track of names;
+#X text 715 6 pdx;
+#X text 33 45 [name_manager] will keep track of names that have been
+added or removed to a central list.;
+#X obj 146 242 name_manager;
+#X msg 24 93 help;
+#X text 54 92 <- Print more info to the console;
+#X msg 21 136 methods;
+#X msg 120 117 foo;
+#X msg 147 117 bar;
+#X text 175 116 <- Check if name exists;
+#X obj 110 268 tgl 15 0 empty empty Name_Exists? 17 7 0 10 -262144
+-1 -1 0 1;
+#X msg 163 143 foo;
+#X msg 190 143 bar;
+#X text 218 142 <- Add name;
+#X obj 215 266 print ALL_NAMES;
+#X obj 202 169 bng 15 250 50 0 empty empty Output_All_Names 17 7 0
+10 -262144 -1 -1;
+#X msg 210 193 foo;
+#X msg 237 193 bar;
+#X text 265 192 <- Delete name;
+#X text 17 298 This is;
+#X obj 66 299 abstractions;
+#X text 146 299 compatible.;
+#X obj 245 219 bng 15 250 50 0 empty empty Clear_All_Names 17 7 0 10
+-262144 -1 -1;
+#X obj 20 269 print EXISTS?;
+#X text 386 52 [name_manager] also works with methods sent to the left
+inlet:;
+#X obj 497 316 name_manager;
+#X msg 429 135 add foo;
+#X msg 458 156 add bar;
+#X msg 521 147 exists foo;
+#X msg 528 173 exists baz;
+#X obj 497 350 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 550 198 delete foo;
+#X msg 566 219 all;
+#X obj 566 347 print ALL_NAMES;
+#X msg 582 241 clear;
+#X text 391 87 If you want to store a name that's the same as one of
+these methods \, use "add <name>" & "exists <name>".;
+#X msg 590 264 help;
+#X connect 3 0 10 0;
+#X connect 3 0 23 0;
+#X connect 3 1 14 0;
+#X connect 4 0 3 0;
+#X connect 6 0 3 0;
+#X connect 7 0 3 0;
+#X connect 8 0 3 0;
+#X connect 11 0 3 1;
+#X connect 12 0 3 1;
+#X connect 15 0 3 2;
+#X connect 16 0 3 3;
+#X connect 17 0 3 3;
+#X connect 22 0 3 4;
+#X connect 25 0 30 0;
+#X connect 25 1 33 0;
+#X connect 26 0 25 0;
+#X connect 27 0 25 0;
+#X connect 28 0 25 0;
+#X connect 29 0 25 0;
+#X connect 31 0 25 0;
+#X connect 32 0 25 0;
+#X connect 34 0 25 0;
+#X connect 36 0 25 0;

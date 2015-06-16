@@ -1,0 +1,13 @@
+#N canvas 927 210 98 153 10;
+#X obj -542 13 inlet;
+#X obj -515 67 == \$1;
+#X obj -493 16 inlet;
+#X obj -536 122 outlet;
+#X obj -542 39 liter;
+#X obj -540 97 spigot;
+#X connect 0 0 4 0;
+#X connect 1 0 5 1;
+#X connect 2 0 1 1;
+#X connect 4 0 5 0;
+#X connect 4 1 1 0;
+#X connect 5 0 3 0;

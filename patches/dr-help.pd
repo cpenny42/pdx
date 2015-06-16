@@ -1,0 +1,45 @@
+#N canvas 522 380 567 325 10;
+#X text 6 1 [dr] - dynamic receive;
+#X text 523 2 pdx;
+#X obj 161 199 dr;
+#X obj 345 227 s \$0-one;
+#X obj 401 227 s \$0-two;
+#X obj 457 227 s \$0-three;
+#X floatatom 161 250 5 0 0 0 - - -;
+#X obj 89 145 f \$0;
+#X obj 89 126 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 89 166 \$1-one;
+#X obj 137 145 f \$0;
+#X obj 137 126 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 183 145 f \$0;
+#X obj 183 126 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 137 166 \$1-two;
+#X msg 183 166 \$1-three;
+#X floatatom 345 205 5 0 0 0 - - -;
+#X floatatom 401 204 5 0 0 0 - - -;
+#X floatatom 457 204 5 0 0 0 - - -;
+#X obj 276 228 s dr-help;
+#X msg 272 167 dr-help;
+#X text 205 123 <- This is necessary if the sender has \$0 in its name
+;
+#X msg 276 196 42;
+#X text 108 32 Will receive from any sender. Send the receiver's name
+to the left inlet to set it.;
+#X connect 2 0 6 0;
+#X connect 7 0 9 0;
+#X connect 8 0 7 0;
+#X connect 9 0 2 0;
+#X connect 10 0 14 0;
+#X connect 11 0 10 0;
+#X connect 12 0 15 0;
+#X connect 13 0 12 0;
+#X connect 14 0 2 0;
+#X connect 15 0 2 0;
+#X connect 16 0 3 0;
+#X connect 17 0 4 0;
+#X connect 18 0 5 0;
+#X connect 20 0 2 0;
+#X connect 22 0 19 0;

@@ -1,0 +1,41 @@
+#N canvas 251 214 513 412 10;
+#X obj 231 311 loadbang;
+#X msg 231 328 vis 1;
+#X obj 231 345 s pd-keyboard_shortcuts.pd;
+#X obj -46 1 cnv 15 508 408 empty empty Keyboard_Shortcuts: 6 12 1
+18 -245566 -1 0;
+#X obj 189 61;
+#X text -4 62 Command-1: Create a new object;
+#X text -4 83 Command-2: Create a new message;
+#X msg 189 85;
+#X text -4 104 Command-3: Create a new float;
+#X floatatom 187 106 5 0 0 0 - - -;
+#X text -4 126 Command-4: Create a new symbol;
+#X symbolatom 187 127 10 0 0 0 - - -;
+#X text -26 27 For Windows \, substitute ctrl for Command;
+#X text -5 215 Command-Shift-B: Create a new Button;
+#X obj 228 216 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text -5 237 Command-Shift-T: Create a new Toggle;
+#X obj 227 239 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 268 208 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 297 215 vu 15 120 empty empty -1 -8 0 10 -66577 -1 1 0;
+#X text -4 258 Command-Shift-V: Create a vertical slider;
+#X text -3 302 Command-Shift-C: Create a canvas:;
+#X obj 72 331 cnv 15 165 55 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 77 336 Right-click the top-left;
+#X text 82 350 of the canvas to change;
+#X text 82 363 its properties;
+#X text -5 196 Command-Shift-L: Clear the console;
+#X text -4 280 Command-Shift-U: Create a vu meter;
+#X text -4 148 Command-5: Create a new comment. Note that pure data
+won't preserve new lines or extra spaces when reopened.;
+#X text 266 59 DSP On: Command-/;
+#X text 260 72 DSP Off: Command-.;
+#X obj 376 67 pddp/dsp;
+#X text 294 100 Preferences: Command- \,;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;

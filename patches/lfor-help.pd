@@ -1,0 +1,41 @@
+#N canvas 449 329 429 362 10;
+#X text 4 5 [lfor] - For loop with a list;
+#X text 389 3 pdx;
+#X text 40 36 Lfor will iterate through a list \, let you alter each
+element \, then output the final list afterward.;
+#X obj 44 221 lfor;
+#X obj 51 278 bng 15 250 50 0 empty empty Bang_when_done 17 7 0 10
+-262144 -1 -1;
+#X obj 44 306 print FINAL_LIST;
+#X text 42 74 The third outlet sends each list element out \, and the
+right inlet takes it back in again. If you don't connect them somehow
+\, the final list will be empty.;
+#X floatatom 65 253 5 0 0 1 Element_Index - -;
+#X obj 113 221 t a;
+#X text 34 172 Do Nothing:;
+#X obj 236 221 lfor;
+#X obj 243 301 bng 15 250 50 0 empty empty Bang_when_done 17 7 0 10
+-262144 -1 -1;
+#X obj 236 329 print FINAL_LIST;
+#X msg 236 193 one two three four five;
+#X floatatom 257 276 5 0 0 1 Element_Index - -;
+#X obj 305 221 route three;
+#X msg 305 245 3;
+#X text 212 169 Replace "three" with "3":;
+#X text 43 124 You get the element's index with each element - this
+starts at 0;
+#X msg 44 193 one two three four;
+#X connect 3 0 5 0;
+#X connect 3 1 4 0;
+#X connect 3 2 8 0;
+#X connect 3 3 7 0;
+#X connect 8 0 3 1;
+#X connect 10 0 12 0;
+#X connect 10 1 11 0;
+#X connect 10 2 15 0;
+#X connect 10 3 14 0;
+#X connect 13 0 10 0;
+#X connect 15 0 16 0;
+#X connect 15 1 10 1;
+#X connect 16 0 10 1;
+#X connect 19 0 3 0;

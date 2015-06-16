@@ -1,0 +1,19 @@
+#N canvas 145 502 450 300 10;
+#X obj 47 104 list prepend add2;
+#X obj 47 124 list trim;
+#X msg 108 124 set;
+#X obj 193 56 inlet RESET;
+#X obj 156 128 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 117 55 inlet BANG;
+#X obj 45 186 outlet;
+#X obj 47 56 inlet add;
+#X msg 47 155;
+#X connect 0 0 1 0;
+#X connect 1 0 8 0;
+#X connect 2 0 8 0;
+#X connect 3 0 2 0;
+#X connect 4 0 8 0;
+#X connect 5 0 4 0;
+#X connect 7 0 0 0;
+#X connect 8 0 6 0;

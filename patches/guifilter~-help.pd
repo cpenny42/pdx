@@ -1,0 +1,14 @@
+#N canvas 510 352 607 381 10;
+#X text 9 3 [guifilter~] - gui interface for [autobiquad~];
+#X text 572 3 pdx;
+#X obj 127 141 guifilter~;
+#X obj 102 90 noise~;
+#X obj 360 6 pddp/dsp;
+#X obj 150 310 *~ 0.4;
+#X obj 146 343 dac~;
+#X text 154 54 This provides a gui representation of the biquad filter
+in [autobiquad~].;
+#X connect 2 0 5 0;
+#X connect 3 0 2 0;
+#X connect 5 0 6 0;
+#X connect 5 0 6 1;

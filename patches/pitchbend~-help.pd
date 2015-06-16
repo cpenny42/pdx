@@ -1,0 +1,22 @@
+#N canvas 843 237 450 300 10;
+#X text 0 4 [pitchbend~] - pitchbend on an incoming signal;
+#X text 400 3 pdx;
+#X obj 99 198 pitchbend~;
+#X obj 99 154 osc~ 300;
+#X text 43 51 Traditional pitchbend;
+#X text 96 69 Left inlet => signal;
+#X text 97 85 Right inlet => transposition in semitones;
+#X obj 194 160 hsl 128 15 0 127 0 1 empty empty empty -2 -8 0 10 -262144
+-1 -1 5900 1;
+#X obj 283 25 pddp/dsp;
+#X obj 99 224 *~ 0.5;
+#X obj 99 250 dac~;
+#X text 190 141 Range from 0 to 127:;
+#X text 110 102 64 == center (no bend);
+#X floatatom 198 182 5 0 0 0 - - -;
+#X connect 2 0 9 0;
+#X connect 3 0 2 0;
+#X connect 7 0 2 1;
+#X connect 7 0 13 0;
+#X connect 9 0 10 0;
+#X connect 9 0 10 1;

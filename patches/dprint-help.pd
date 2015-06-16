@@ -1,0 +1,14 @@
+#N canvas 663 495 450 250 10;
+#X text 8 4 [dprint] - dynamic print;
+#X text 410 5 pdx;
+#X text 52 51 Like print \, but you can change the print handle on
+the fly. Can't be initialized with arguments.;
+#X obj 120 174 dprint;
+#X msg 151 128 print statement 1;
+#X msg 266 126 another print thing;
+#X msg 56 125 foo;
+#X msg 88 124 bar;
+#X connect 4 0 3 1;
+#X connect 5 0 3 1;
+#X connect 6 0 3 0;
+#X connect 7 0 3 0;

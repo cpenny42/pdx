@@ -1,0 +1,27 @@
+#N canvas 359 334 445 318 10;
+#X text 11 4 [for++] - iterate through a range of number;
+#X text 404 7 pdx;
+#X text 55 52 Iterate through a range of numbers:;
+#X text 126 77 Arg1: starting number;
+#X text 126 94 Arg2: ending number;
+#X obj 167 246 for++ 1 10 500;
+#X floatatom 167 168 5 0 0 0 - - -;
+#X floatatom 207 194 5 0 0 0 - - -;
+#X floatatom 248 214 5 0 0 0 - - -;
+#X obj 94 206 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 264 278 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 152 279 print FOR++;
+#X text 51 188 Bang to start:;
+#X text 203 166 set starting point;
+#X text 242 190 set end point;
+#X text 285 212 set time grain;
+#X text 126 112 Arg3: time delay in ms (optional);
+#X text 283 275 bang when done;
+#X connect 5 0 11 0;
+#X connect 5 1 10 0;
+#X connect 6 0 5 0;
+#X connect 7 0 5 1;
+#X connect 8 0 5 2;
+#X connect 9 0 5 0;

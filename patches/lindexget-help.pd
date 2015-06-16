@@ -1,0 +1,18 @@
+#N canvas 409 402 413 219 10;
+#X text 2 2 [lindexget] - get the element at an index of a list;
+#X text 373 5 pdx;
+#X msg 138 70 foo bar baz;
+#X obj 165 109 lindexget 2;
+#X obj 165 135 lset;
+#X msg 228 78 0;
+#X msg 253 78 1;
+#X msg 274 78 2;
+#X obj 200 136 print LINDEXGET_HELP;
+#X msg 165 159;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 0 8 0;
+#X connect 4 0 9 0;
+#X connect 5 0 3 1;
+#X connect 6 0 3 1;
+#X connect 7 0 3 1;

@@ -1,0 +1,47 @@
+#N canvas 442 300 450 300 10;
+#X obj 160 196 number;
+#X text 5 -14 [number];
+#X text 396 -8 pdx;
+#X text 38 38 [number] gives you additional controls for a float. You
+can set the maximum & minimum or force the number to an int.;
+#X floatatom 92 127 5 0 0 1 Input - -;
+#X floatatom 160 234 5 0 0 0 Output - -;
+#X msg 233 86 symbol none;
+#X msg 244 107 symbol none;
+#X text 306 85 <- Remove Minimum;
+#X text 316 107 <- Remove Maximum;
+#X floatatom 261 134 5 0 0 1 Set_Minimum - -;
+#X floatatom 262 154 5 0 0 1 Set_Maximum - -;
+#X obj 264 176 tgl 15 0 empty empty Toggle_Float/Int 17 7 0 10 -262144
+-1 -1 0 1;
+#X msg 182 85 none;
+#X obj 182 105 symbol;
+#X text 90 83 Remove Both ->;
+#N canvas 802 551 365 271 META 0;
+#X text 8 29 LICENSE SIBSD;
+#X text 6 89 INLET_1 float;
+#X text 8 9 KEYWORDS number minimum maximum int;
+#X text 8 49 DESCRIPTION control number;
+#X text 6 69 INLET_0 float;
+#X text 6 106 INLET_2 float;
+#X text 5 121 INLET_3 float;
+#X text 7 137 OUTLET_0 float;
+#X text 7 156 LIBRARY pdx;
+#X text 7 176 AUTHOR;
+#X text 7 216 RELEASE_DATE 2013;
+#X text 7 236 HELP_PATCH_AUTHORS . Patch updated for the pdx framework.
+;
+#X text 7 196 WEBSITE www.intrinsic-audio.com;
+#X restore 399 269 pd META;
+#X obj 215 233 print NUMBER;
+#X connect 0 0 5 0;
+#X connect 0 0 17 0;
+#X connect 4 0 0 0;
+#X connect 6 0 0 1;
+#X connect 7 0 0 2;
+#X connect 10 0 0 1;
+#X connect 11 0 0 2;
+#X connect 12 0 0 3;
+#X connect 13 0 14 0;
+#X connect 14 0 0 1;
+#X connect 14 0 0 2;

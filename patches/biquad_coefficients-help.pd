@@ -1,0 +1,39 @@
+#N canvas 515 441 501 335 10;
+#X text 6 3 [biquad_coefficients];
+#X text 461 4 pdx;
+#X floatatom 23 73 5 0 0 1 Center_Frequency - -;
+#X floatatom 60 97 5 0 0 1 Q_(only_for_lowpass_highpass_bandpass_&_notch_types)
+- -;
+#X floatatom 70 125 5 0 0 1 Peak_Gain_(Only_for_peak_highshelf_&_lowshelf_types)
+- -;
+#X msg 86 147 lowpass;
+#X msg 136 147 highpass;
+#X msg 192 147 bandpass;
+#X msg 248 147 notch;
+#X msg 287 147 peak;
+#X msg 320 147 lowshelf;
+#X msg 376 147 highshelf;
+#X obj 23 221 biquad_coefficients;
+#X obj 39 247 pack 0 0 0 0 0;
+#X obj 39 272 print BIQUAD_COEFFICIENTS;
+#X text 19 37 Converts a filter specification to biquad coefficients.
+;
+#X text 7 301 Algorithms taken from:;
+#X text 144 301 http://www.earlevel.com/main/2011/01/02/biquad-formulas/
+;
+#X connect 2 0 12 0;
+#X connect 3 0 12 1;
+#X connect 4 0 12 2;
+#X connect 5 0 12 3;
+#X connect 6 0 12 3;
+#X connect 7 0 12 3;
+#X connect 8 0 12 3;
+#X connect 9 0 12 3;
+#X connect 10 0 12 3;
+#X connect 11 0 12 3;
+#X connect 12 0 13 0;
+#X connect 12 1 13 1;
+#X connect 12 2 13 2;
+#X connect 12 3 13 3;
+#X connect 12 4 13 4;
+#X connect 13 0 14 0;

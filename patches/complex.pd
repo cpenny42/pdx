@@ -1,0 +1,17 @@
+#N canvas 603 386 218 149 10;
+#X obj 5 -18 inlet REAL;
+#X obj 90 -17 inlet IMAGINARY;
+#X obj 72 71 pack 0 0;
+#X obj 72 91 outlet COMPLEX_NUMBER;
+#X obj 130 3 loadbang;
+#X obj 130 45 f \$1;
+#X obj 162 45 f \$2;
+#X obj 130 24 t b b;
+#X connect 0 0 2 0;
+#X connect 1 0 2 1;
+#X connect 2 0 3 0;
+#X connect 4 0 7 0;
+#X connect 5 0 2 0;
+#X connect 6 0 2 1;
+#X connect 7 0 5 0;
+#X connect 7 1 6 0;

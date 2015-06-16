@@ -1,0 +1,17 @@
+#N canvas 486 291 408 278 10;
+#X text 12 6 [counter2] - simple counter;
+#X text 358 6 pdx;
+#X obj 158 163 counter2;
+#X text 41 63 Simple - left is down \, right is up \, center is reset
+to 0;
+#X floatatom 158 191 5 0 0 0 - - -;
+#X floatatom 182 111 5 0 0 0 - - -;
+#X text 66 111 Set current number:;
+#X obj 220 138 bng 15 250 50 0 empty empty Up 17 7 0 10 -262144 -1
+-1;
+#X obj 134 137 bng 15 250 50 0 empty empty Down 17 7 0 10 -262144 -1
+-1;
+#X connect 2 0 4 0;
+#X connect 5 0 2 1;
+#X connect 7 0 2 2;
+#X connect 8 0 2 0;

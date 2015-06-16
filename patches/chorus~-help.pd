@@ -1,0 +1,75 @@
+#N canvas 507 273 436 412 10;
+#X obj 108 254 chorus;
+#X msg 160 175 rate \$1;
+#X msg 212 175 depth \$1;
+#X msg 271 175 mix \$1;
+#X msg 318 175 on \$1;
+#X msg 355 175 auto \$1;
+#N canvas 651 23 171 195 lop~ 0;
+#X obj 64 10 inlet;
+#X obj 13 50 lop~ 1000;
+#X obj 13 70 lop~ 1000;
+#X obj 13 90 lop~ 1000;
+#X obj 13 110 lop~ 1000;
+#X obj 13 10 inlet~;
+#X obj 13 130 outlet~;
+#N canvas 384 23 516 300 expscale 0;
+#X obj 14 18 inlet;
+#X obj 14 39 / 127;
+#X obj 14 106 outlet;
+#X obj 14 62 pow 2.5;
+#X obj 14 84 * 10000;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 2 0;
+#X restore 64 30 pd expscale;
+#X connect 0 0 7 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 6 0;
+#X connect 5 0 1 0;
+#X connect 7 0 1 1;
+#X restore 19 218 pd lop~;
+#X obj 61 200 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 19 181 phasor~;
+#X obj 22 143 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 19 161 mtof;
+#X obj 160 33 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 212 33 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 271 33 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 355 32 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X text 11 -56 [chorus] - control rate chorus effect;
+#X text 53 -32 all parameters are from 0-127;
+#X text 53 -10 auto automatically configures the settings for simplicity
+;
+#X obj 108 304 dac~;
+#X obj 108 278 *~ 0.3;
+#X obj 318 153 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 398 -52 pdx;
+#X connect 0 0 19 0;
+#X connect 1 0 0 1;
+#X connect 2 0 0 1;
+#X connect 3 0 0 1;
+#X connect 4 0 0 1;
+#X connect 5 0 0 1;
+#X connect 6 0 0 0;
+#X connect 7 0 6 1;
+#X connect 8 0 6 0;
+#X connect 9 0 10 0;
+#X connect 10 0 8 0;
+#X connect 11 0 1 0;
+#X connect 12 0 2 0;
+#X connect 13 0 3 0;
+#X connect 14 0 5 0;
+#X connect 19 0 18 0;
+#X connect 19 0 18 1;
+#X connect 20 0 4 0;

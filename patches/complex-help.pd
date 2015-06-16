@@ -1,0 +1,55 @@
+#N canvas 599 200 470 337 10;
+#X text 432 -3 pdx;
+#N canvas 51 243 403 233 META 0;
+#X text 12 25 LICENSE SIBSD;
+#X text 12 5 KEYWORDS complex math;
+#X text 13 95 OUTLET list;
+#X text 13 135 AUTHOR;
+#X text 13 155 WEBSITE http://www.intrinsic-audio.com;
+#X text 13 175 RELEASE_DATE 2015;
+#X text 13 195 HELP_PATCH_AUTHORS . This help patch was created for
+the pdx framework.;
+#X text 13 115 LIBRARY pdx;
+#X text 12 45 DESCRIPTION build complex from real & imaginary parts
+;
+#X text 12 65 INLET_0 float;
+#X text 12 79 INLET_1 float;
+#X restore 400 301 pd META;
+#X text 28 278 Related Patches:;
+#X obj 164 298 cexp;
+#X obj 272 298 complex;
+#X text 158 278 Complex Arithematic;
+#X obj 67 298 csub;
+#X obj 36 298 cadd;
+#X obj 98 298 cmult;
+#X obj 134 298 cdiv;
+#X obj 243 148 complex;
+#X floatatom 281 123 5 0 0 0 - - -;
+#X floatatom 242 122 5 0 0 0 - - -;
+#X text 227 121 Re;
+#X text 312 123 Im;
+#X obj 194 298 cmag;
+#X obj 151 200 csymbol;
+#X obj 151 220 print COMPLEX_NUMBER;
+#X obj 224 298 csymbol;
+#X obj 101 217 lset;
+#X text 5 2 [complex];
+#X text 56 33 Build a complex number from Real & Imaginary parts. It
+is exactly like [pack 0 0] \, but both inlets are hot (so each will
+trigger output). To avoid this \, use [pack 0 0] instead.;
+#X obj 96 146 pack 0 0;
+#X floatatom 136 118 5 0 0 0 - - -;
+#X floatatom 97 117 5 0 0 0 - - -;
+#X text 82 116 Re;
+#X text 167 118 Im;
+#X msg 101 240 0 + 0i;
+#X obj 320 298 cconj;
+#X connect 10 0 16 0;
+#X connect 11 0 10 1;
+#X connect 12 0 10 0;
+#X connect 16 0 17 0;
+#X connect 16 0 19 0;
+#X connect 19 0 27 0;
+#X connect 22 0 16 0;
+#X connect 23 0 22 1;
+#X connect 24 0 22 0;

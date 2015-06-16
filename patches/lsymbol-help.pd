@@ -1,0 +1,22 @@
+#N canvas 433 326 452 376 10;
+#X text 6 7 [lsymbol] - convert a list to a symbol;
+#X text 415 5 pdx;
+#X obj 165 88 lsymbol;
+#X msg 165 51 This is a list;
+#X symbolatom 165 118 20 0 0 0 - - -;
+#X text 57 174 You can use this to get labels with spaces instead of
+underscores:;
+#X obj 281 229 bng 15 250 50 0 empty \$0-button empty 17 7 0 10 -262144
+-1 -1;
+#X obj 88 310 s \$0-button;
+#X msg 88 225 This label has spaces;
+#X obj 88 247 lsymbol;
+#X obj 88 268 list prepend label;
+#X obj 88 289 list trim;
+#X text 30 223 Click ->;
+#X connect 2 0 4 0;
+#X connect 3 0 2 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 11 0 7 0;

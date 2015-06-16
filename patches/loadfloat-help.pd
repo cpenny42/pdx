@@ -1,0 +1,66 @@
+#N canvas 551 89 669 465 10;
+#X obj 5 429 cnv 15 660 20 empty \$0-pddp.cnv.footer empty 20 12 0
+14 -228856 -66577 0;
+#X obj 4 3 cnv 15 660 40 empty \$0-pddp.cnv.header loadfloat 3 12 0
+18 -204280 -1 0;
+#X obj 3 268 cnv 3 660 3 empty \$0-pddp.cnv.inlets inlets 15 12 0 13
+-228856 -1 0;
+#N canvas 52 467 330 162 META 0;
+#X text 11 23 LICENSE SIBSD;
+#X text 12 81 LIBRARY IntrinsicAudio;
+#X text 12 99 AUTHOR;
+#X text 13 116 RELEASE_DATE 2014;
+#X text 13 136 HELP_PATCH_AUTHORS;
+#X text 10 5 Created by;
+#X text 12 63 OUTLET_0 float;
+#X text 11 43 DESCRIPTION loadfloat - send float when patch loads;
+#X restore 616 431 pd META;
+#X obj 3 297 cnv 3 660 3 empty empty outlets 15 12 0 13 -228856 -1
+0;
+#X obj 3 363 cnv 3 660 3 empty empty arguments 15 12 0 13 -228856 -1
+0;
+#X obj 73 322 cnv 17 3 20 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X text 103 430 See also:;
+#X obj 592 14 loadfloat;
+#X obj 71 392 cnv 17 3 20 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X text 74 273 (none);
+#X text 103 321 FLOAT -;
+#X text 156 322 The float given by the creation argument is send automatically
+when the containing patch is loaded;
+#X text 101 393 FLOAT -;
+#X text 154 394 The float to output when the parent patch is loaded.
+;
+#X obj 166 431 loadbang;
+#X obj 223 431 loadmess;
+#X text 9 26 Send a float automatically when the patch loads;
+#X obj 63 129 print LOADFLOAT-HELP;
+#X obj 277 106 pow 8;
+#X obj 277 129 - 1;
+#X floatatom 277 152 5 0 0 0 - - -;
+#X obj 63 105 loadfloat 14;
+#X obj 277 82 loadfloat 2;
+#X obj 472 145 number;
+#X obj 483 57 loadfloat 0;
+#X obj 494 77 loadfloat 10;
+#X obj 505 97 loadfloat 1;
+#X obj 505 119 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X floatatom 447 111 5 0 0 0 - - -;
+#X floatatom 472 171 5 0 0 0 - - -;
+#X text 149 203 [loadfloat] is similar to [loadbang] - it outputs the
+given float when the patch loads. It outputs 0 by default if no argument
+is given.;
+#X text 514 15 pdx;
+#X obj 281 431 argv;
+#X connect 19 0 20 0;
+#X connect 20 0 21 0;
+#X connect 22 0 18 0;
+#X connect 23 0 19 0;
+#X connect 24 0 30 0;
+#X connect 25 0 24 1;
+#X connect 26 0 24 2;
+#X connect 27 0 28 0;
+#X connect 28 0 24 3;
+#X connect 29 0 24 0;

@@ -1,0 +1,21 @@
+#N canvas 364 452 450 300 10;
+#X text 402 -5 pdx;
+#X obj 177 254 cmult~;
+#X obj 223 254 cdiv~;
+#X obj 261 254 cconj~;
+#X text 43 51 complex arithmetic - Left is real \, right is imaginary
+;
+#X obj 138 94 number~;
+#X obj 215 94 number~;
+#X text 178 223 See also:;
+#X obj 135 169 view~;
+#X obj 218 169 view~;
+#X obj 139 254 cadd~;
+#X text 2 -7 [cexp~] - Complex signal exponent;
+#X obj 182 140 cexp~;
+#X text 118 22 e^(i*pi) = cos(a) + i*sin(b);
+#X obj 306 254 csub~;
+#X connect 5 0 12 0;
+#X connect 6 0 12 1;
+#X connect 12 0 8 0;
+#X connect 12 1 9 0;

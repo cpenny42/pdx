@@ -1,0 +1,9 @@
+#N canvas 663 307 407 230 10;
+#X text 358 5 pdx;
+#X floatatom 161 96 5 0 0 0 - - -;
+#X floatatom 161 173 5 0 0 0 - - -;
+#X text 3 5 [csc] - cosecant;
+#X text 118 46 cosecant == 1/sin(x);
+#X obj 161 133 csc;
+#X connect 1 0 5 0;
+#X connect 5 0 2 0;

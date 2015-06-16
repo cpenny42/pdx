@@ -1,0 +1,15 @@
+#N canvas 397 550 430 252 10;
+#X text 366 0 pdx;
+#X obj 154 186 print LFL>-HELP;
+#X msg 105 122 foo;
+#X msg 147 122 foo bar;
+#X msg 212 122 foo bar baz;
+#X msg 290 122 foo bar baz saget;
+#X text 71 58 Filters lists of length >= the argument;
+#X text 4 0 [lfl>=] - filter list based on length;
+#X obj 154 158 lfl>= 2;
+#X connect 2 0 8 0;
+#X connect 3 0 8 0;
+#X connect 4 0 8 0;
+#X connect 5 0 8 0;
+#X connect 8 0 1 0;
