@@ -1,4 +1,4 @@
-#N canvas 115 72 970 637 10;
+#N canvas 554 176 970 637 10;
 #X obj 227 -80 cnv 15 15 15 empty \$0-title PDX - User's Guide  20
 12 1 46 -262144 -66577 0;
 #X obj 159 -21 cnv 15 15 15 empty \$0-subtitle A collection of vanilla-compatible Pd extensions. 
@@ -2028,16 +2028,16 @@ counts up. It also has a GUI representation with buttons for interaction.
 #X connect 22 0 11 5;
 #X restore -92 348 pd \$0-counterdemo;
 #X obj -318 516 f \$0;
-#N canvas 328 74 981 812 \$0-misctooldemo 0;
+#N canvas 328 74 981 849 \$0-misctooldemo 0;
 #X obj 390 21 cnv 15 15 15 empty empty Misc_Tools 20 12 1 32 -262144
 -66577 0;
 #X obj 197 143 anything;
 #X obj 161 249 circularlist;
-#X obj 634 327 dpoly;
+#X obj 634 377 dpoly;
 #X obj 186 544 for++;
 #X obj 162 453 name_manager;
-#X obj 648 464 number2note;
-#X obj 652 638 sbuilder;
+#X obj 648 514 number2note;
+#X obj 652 688 sbuilder;
 #X obj 640 130 scales;
 #X text 84 76 Store anything \, like [float] \, [list] \, and [symbol].
 Bang the left inlet to output or send a message/float to store it &
@@ -2072,32 +2072,35 @@ of the intervals \, then iterate or set keys \, modes \, and octaves.
 See the help file for more info.;
 #X obj 689 130 scales-help;
 #X obj 341 647 dr-help;
-#X text 545 170 Send note-offs to every note. Useful to get rid of
+#X text 545 220 Send note-offs to every note. Useful to get rid of
 stuck notes.;
-#X obj 692 217 noteflush-help;
-#X obj 622 217 noteflush;
-#X text 548 282 Divide notes between multiple voices — like [poly]
+#X obj 692 267 noteflush-help;
+#X obj 622 267 noteflush;
+#X text 548 332 Divide notes between multiple voices — like [poly]
 \, but you can set the # of voices dynamically.;
-#X obj 685 327 dpoly-help;
-#X text 547 400 Convert a MIDI note number to a symbol with the letter
+#X obj 685 377 dpoly-help;
+#X text 547 450 Convert a MIDI note number to a symbol with the letter
 & octave #:;
-#X floatatom 648 441 5 0 0 0 - - -;
-#X symbolatom 648 487 10 0 0 0 - - -;
-#X text 547 530 Build a symbol programatically:;
-#X obj 779 607 bng 15 250 50 0 empty empty Bang_to_clear 17 7 0 10
+#X floatatom 648 491 5 0 0 0 - - -;
+#X symbolatom 648 537 10 0 0 0 - - -;
+#X text 547 580 Build a symbol programatically:;
+#X obj 779 657 bng 15 250 50 0 empty empty Bang_to_clear 17 7 0 10
 -262144 -1 -1;
-#X obj 544 593 bng 15 250 50 0 empty empty Bang_to_output 17 7 0 10
+#X obj 544 643 bng 15 250 50 0 empty empty Bang_to_output 17 7 0 10
 -262144 -1 -1;
-#X symbolatom 652 664 10 0 0 0 - - -;
-#X msg 642 563 p;
-#X msg 668 563 u;
-#X msg 695 564 r;
-#X msg 724 564 e;
-#X msg 754 564 d;
-#X msg 782 564 ata;
-#X obj 414 758 keyboard_shortcuts;
-#X text 303 729 [keyboard_shortcuts] shows all of Pd's shortcuts for
+#X symbolatom 652 714 10 0 0 0 - - -;
+#X msg 642 613 p;
+#X msg 668 613 u;
+#X msg 695 614 r;
+#X msg 724 614 e;
+#X msg 754 614 d;
+#X msg 782 614 ata;
+#X obj 414 808 keyboard_shortcuts;
+#X text 303 779 [keyboard_shortcuts] shows all of Pd's shortcuts for
 easy reference:;
+#X text 545 162 Play a certain note in a scale:;
+#X obj 638 187 scalePlayer;
+#X obj 719 187 scalePlayer-help;
 #X connect 6 0 39 0;
 #X connect 7 0 43 0;
 #X connect 23 0 21 0;
@@ -2132,7 +2135,7 @@ with message boxes:;
 #X text 197 295 <- add items separated with a semicolon;
 #X msg 105 321 set;
 #X text 53 319 Clear:;
-#N canvas 509 274 600 507 list-help 0;
+#N canvas 548 237 600 507 list-help 0;
 #X obj 29 11 list;
 #X text 76 12 - building and using variable-length messages;
 #N canvas 92 130 654 658 about-lists 0;
@@ -2549,7 +2552,7 @@ in a list or other message.;
 #X msg 586 295 set;
 #X text 537 365 Count the number of elements in a list:;
 #X msg 620 395 one two three four five six 7;
-#N canvas 92 130 654 658 about-lists 0;
+#N canvas 1159 128 654 658 about-lists 0;
 #X obj 50 625 print message;
 #X msg 50 438 list x.wav 44100;
 #X msg 50 596 read \$1 \$2;
@@ -3003,9 +3006,10 @@ connect 1 0 3 0 \, connect 3 0 9 0 \, connect 5 0 7 0 \, connect 7
 #X obj 326 61 number~;
 #X obj 395 113 number~;
 #X obj 234 37 hradio 15 1 0 4 empty empty empty 0 -8 0 10 -262144 -1
--1 3;
+-1 0;
 #X obj 234 59 + 1;
 #X obj 270 230 view~;
+#X obj 412 43 switch~;
 #X connect 3 0 5 0;
 #X connect 3 1 6 0;
 #X connect 3 2 7 0;
@@ -3027,10 +3031,11 @@ connect 1 0 3 0 \, connect 3 0 9 0 \, connect 5 0 7 0 \, connect 7
 #N canvas 743 297 450 300 \$0-visualizingaudio 0;
 #X text 128 108 visualizingaudio;
 #X obj 147 182 autowaveform~;
-#X obj 154 151 autospectrum~;
+#X obj 145 146 autospectrum~;
+#X obj 308 133 switch~;
 #X restore -265 429 pd \$0-visualizingaudio;
 #X obj 1213 620 f \$0;
-#N canvas 509 539 450 300 \$0-synthbuildingblocks 0;
+#N canvas 496 680 450 300 \$0-synthbuildingblocks 0;
 #X obj 64 37 hann_table;
 #X obj 64 64 sawtooth_table;
 #X obj 66 93 sine_table;
@@ -3046,6 +3051,7 @@ connect 1 0 3 0 \, connect 3 0 9 0 \, connect 5 0 7 0 \, connect 7
 #X obj 134 194 tri~;
 #X obj 246 14 guiadsr;
 #X obj 339 102 adsr~;
+#X obj 307 210 switch~;
 #X restore -269 461 pd \$0-synthbuildingblocks;
 #N canvas 333 271 808 788 \$0-audioeffects 0;
 #X obj 58 36 chorus~;
@@ -3067,6 +3073,7 @@ connect 1 0 3 0 \, connect 3 0 9 0 \, connect 5 0 7 0 \, connect 7
 #X obj 533 82 multitremolo~~;
 #X obj 529 133 multidelay~;
 #X obj 529 172 multidelay~~;
+#X obj 151 203 switch~;
 #X restore -227 222 pd \$0-audioeffects;
 #X msg 1213 641 obj 268 21 cnv 15 15 15 empty empty Synth_Tools 20
 12 1 32 -262144 -66577 0 \, obj 405 115 bng 60 250 50 0 empty empty
