@@ -39,7 +39,7 @@
 #X msg 824 542 noise amount \$1;
 #X obj 710 646 s \$0-methods;
 #X obj 985 520 hsl 128 15 0 22050 0 0 empty empty empty -2 -8 0 10
--262144 -1 -1 0 1;
+-262144 -1 -1 12700 1;
 #X floatatom 982 544 5 0 0 0 - - -;
 #X msg 982 567 filter frequency \$1;
 #X floatatom 145 510 5 0 0 1 semi - -;
@@ -87,7 +87,7 @@
 -1 -1;
 #X obj 958 310 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X text 899 286 Set waveform;
+#X text 898 293 Set waveform;
 #X obj 614 334 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 693 460 s \$0-methods;
@@ -102,7 +102,7 @@
 #X msg 693 302 osc3 semi \$1;
 #X msg 699 359 osc3 cent \$1;
 #X msg 1055 437 osc3 mode \$1;
-#X text 854 259 OSC 3:;
+#X text 813 261 OSC 3:;
 #X text 696 488 NOISE:;
 #X obj 982 592 s \$0-methods;
 #X obj 813 89 guiadsr;
@@ -144,18 +144,18 @@
 -1 -1 0 1;
 #X floatatom 1203 472 5 0 0 0 - - -;
 #X obj 1175 526 s \$0-methods;
-#X text 1170 280 PITCHBEND:;
+#X text 1192 313 PITCHBEND:;
 #X obj 325 416 symbol;
 #X obj 353 642 symbol;
 #X msg 353 662 osc2 set \$1;
 #X obj 901 415 symbol;
 #X obj 119 9 loadbang;
 #X obj 1166 103 vsl 15 80 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 3700 1;
 #X obj 1194 103 vsl 15 80 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
 #X obj 1223 103 vsl 15 80 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 4000 1;
 #N canvas 529 250 242 141 hotpack 0;
 #X obj 16 14 inlet;
 #X obj 85 15 inlet;
@@ -203,7 +203,7 @@
 #X obj 198 124 + 1;
 #X obj 197 145 / 2;
 #X obj 199 256 s \$0-methods;
-#X obj 249 220 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 249 220 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 199 233 spigot;
 #X text 188 12 Rate;
@@ -359,7 +359,7 @@ from. This can be also used to change the pulse-width of the waveform.
 #X obj 40 516 loadbang;
 #X obj 552 299 loadbang;
 #X obj 134 398 hsl 80 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 3200 1;
+-1 -1 4300 1;
 #X msg 1175 449 pitchbend \$1;
 #X msg 1203 497 pitchbend range \$1;
 #X obj 208 829 metro 40;
@@ -368,7 +368,7 @@ from. This can be also used to change the pulse-width of the waveform.
 #X floatatom 711 416 5 0 0 1 phase - -;
 #X text 709 376 phase offset (0 to 1);
 #X obj 714 396 hsl 80 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 1800 1;
+-1 -1 6200 1;
 #X msg 711 436 osc3 phase \$1;
 #X floatatom 161 644 5 0 0 1 phase - -;
 #X text 159 604 phase offset (0 to 1);
@@ -382,15 +382,19 @@ from. This can be also used to change the pulse-width of the waveform.
 200 \, noise amount 0.1 \, osc1 cent -5 \, osc2 cent 5 \, filter frequency
 3000 \, volume 0.5;
 #X obj 41 156 outlet;
+#X obj 38 29 loadbang;
 #X connect 0 0 1 0;
+#X connect 2 0 0 0;
 #X restore 5 688 pd presets;
 #X obj 26 735 subtractive_synth;
 #X obj 178 880 loadfloat 200;
 #X obj 266 879 loadfloat 8;
 #X obj 590 267 loadfloat 10;
 #X msg 120 29 legato 1 \, keys 0;
-#X obj 460 328 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 460 328 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
+#X text 855 261 CURRENTLY DISABLED FOR IPAD PERFORMANCE REASONS;
+#X text 886 276 It is trivial to add an extra oscillator though.;
 #X connect 0 0 27 0;
 #X connect 1 0 2 0;
 #X connect 2 0 25 0;

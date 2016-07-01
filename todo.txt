@@ -13,3 +13,5 @@ fix transistor~-help.pd
 something happened to autospectrum
 
 mention that [gate 3] is different than [gate3] and will produce an error in xcode
+
+Some patches have been removed from the library but are still in Users_Guide.pd
